@@ -38,7 +38,7 @@
   };
 
   programs.btop.settings = {
-    color_theme = "tokyo-night.theme";
+    color_theme = "./tokyo-night.theme";
     theme_background = true;
     rounded_corners = true;
   };
