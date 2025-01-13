@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   # Home Manager needs a bit of information about you and the paths it should
@@ -41,6 +42,23 @@
     color_theme = "./tokyo-night.theme";
     theme_background = true;
     rounded_corners = true;
+  };
+
+  programs.firefox = {
+    enable = true;
+    policies = {
+      DisableTelemetry = true;
+      DisableFirefoxStudies = true;
+      EnableTrackingProtection = {
+        Value = true;
+        Locked = true;
+        Cryptomining = true;
+        Fingerprinting = true;
+      };
+      DisablePocket = true;
+      OverrideFirstRunPage = "";
+      OverridePostUpdatePage = "";
+    };
   };
 
   # Let Home Manager install and manage itself.
