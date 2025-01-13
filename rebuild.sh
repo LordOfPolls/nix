@@ -3,7 +3,7 @@ cd /etc/nixos
 
 if git diff --quiet '*.nix'; then
     echo "No changes detected, exiting."
-    popd
+    popd &>/dev/null
     exit 0
 fi
 alejandra . &>/dev/null \
@@ -21,5 +21,5 @@ sudo nixos-rebuild switch --flake /etc/nixos#$host &>nixos-switch.log || (cat ni
 
 current=$(nixos-rebuild list-generations | grep current).
 git commit -am "$current"
-popd
+popd &>/dev/null
 notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
