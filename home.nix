@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "polls";
@@ -31,8 +33,8 @@
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
-    color-scheme = "prefer-dark";
-  };
+      color-scheme = "prefer-dark";
+    };
   };
 
   # Let Home Manager install and manage itself.
