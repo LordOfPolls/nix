@@ -134,7 +134,6 @@
 
   environment.systemPackages = with pkgs; [
     wget
-    pkgs.nixfmt-rfc-style
     git
     kitty
     pkgs.nixfmt-rfc-style
@@ -176,7 +175,19 @@
     randomizedDelaySec = "45min";
   };
 
-  services.openssh.enable = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      PermitRootLogin = "no";
+    };
+  };
 
   system.stateVersion = "24.11";
 }
