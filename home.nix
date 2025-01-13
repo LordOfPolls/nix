@@ -37,6 +37,12 @@
     };
   };
 
+  programs.btop.settings = {
+    color_theme = "tokyonight";
+    theme_background = true;
+    rounded_corners = true;
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
