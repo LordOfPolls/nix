@@ -126,6 +126,7 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
+  programs.gamemode.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
