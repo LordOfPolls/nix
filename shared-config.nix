@@ -34,6 +34,7 @@
 
   hardware.graphics = {
     enable = true;
+    enable32Bit = true;
   };
 
   services.xserver.displayManager.gdm.enable = true;
@@ -111,6 +112,7 @@
       pkgs.vlc
       pkgs.obsidian
       pkgs.discord
+      pkgs.gitkraken
     ];
   };
 
@@ -141,6 +143,17 @@
     pkgs.pyenv
     pkgs.vscode
     alejandra
+    pkgs.gnome-tweaks
+
+    gnumake
+    gcc
+    cmake
+    pkg-config
+
+    btop
+    htop
+    neofetch
+    ripgrep
   ];
 
   fonts.packages = with pkgs; [
