@@ -25,5 +25,12 @@
         inputs.home-manager.nixosModules.default
       ];
     };
+    nixosConfigurations.demi = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./hosts/demi/configuration.nix
+        inputs.home-manager.nixosModules.default
+      ];
+    };
   };
 }
