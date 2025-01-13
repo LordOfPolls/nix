@@ -121,6 +121,7 @@
     users = {
       "polls" = import ./home.nix;
     };
+    backupFileExtension = "backup";
   };
 
   programs.steam = {

@@ -59,6 +59,17 @@
       OverrideFirstRunPage = "";
       OverridePostUpdatePage = "";
     };
+
+    profiles.polls = {
+      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+        bitwarden
+        ublock-origin
+        sponsorblock
+        darkreader
+        tridactyl
+        youtube-shorts-block
+      ];
+    };
   };
 
   # Let Home Manager install and manage itself.
