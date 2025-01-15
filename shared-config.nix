@@ -156,6 +156,12 @@
     ripgrep
   ];
 
+  environment.variables = {
+    PATH = [
+      "$HOME/.cargo/bin"
+    ];
+  };
+
   fonts.packages = with pkgs; [
     font-awesome
     powerline-fonts
