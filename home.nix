@@ -153,6 +153,7 @@
 
       hostname = {
         ssh_only = false;
+        format = "[$hostname]($style)|";
       };
 
       rust = {
