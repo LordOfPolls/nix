@@ -155,6 +155,16 @@
         ssh_only = false;
       };
 
+      username = {
+        show_always = true;
+      };
+
+      sudo = {
+        symbol = "👑";
+        style = "bold red";
+        disabled = false;
+      };
+
       rust = {
         format = "via [$symbol$version]($style) ";
         style = "bold red";
