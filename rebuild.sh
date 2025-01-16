@@ -10,11 +10,14 @@ send_notification() {
     sudo -u $SUDO_USER DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$user_id/bus notify-send "$title" "$message" --icon="$icon" -a "NixOS Rebuild"
 }
 
-if git diff --quiet '*.nix'; then
-   echo "No changes detected, exiting."
-   popd &>/dev/null
-   exit 0
+if [[ "$1" != "--force" && "$1" != "-f" ]]; then
+    if git diff --quiet '*.nix'; then
+       echo "No changes detected, exiting."
+       popd &>/dev/null
+       exit 0
+    fi
 fi
+
 alejandra . &>/dev/null \
  || ( alejandra . ; echo "formatting failed!" && exit 1)
 
