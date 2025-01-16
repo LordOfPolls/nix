@@ -222,6 +222,11 @@
     };
   };
 
+  programs.gitui = {
+    enable = true;
+    theme = (import ./themes/gitui/mocha.nix).theme;
+  };
+
   programs.firefox = {
     enable = true;
     policies = {
