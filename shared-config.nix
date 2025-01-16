@@ -114,6 +114,9 @@
       pkgs.obsidian
       pkgs.discord
       pkgs.gitkraken
+      pkgs.porsmo
+      pkgs.gitui
+      pkgs.speedtest-rs
     ];
   };
 
@@ -151,12 +154,35 @@
     gcc
     cmake
     pkg-config
+    pkgs.irust
+    pkgs.bacon
 
+    pkgs.delta
+    pkgs.bat
+    pkgs.eza
+    pkgs.dust
+    pkgs.coreutils-full
     btop
     htop
     neofetch
     ripgrep
   ];
+
+  environment.shellAliases = {
+    cat = "bat";
+
+    ls = "eza";
+    ll = "eza -l";
+    la = "eza -la";
+    lt = "eza --tree";
+    l = "eza -l";
+    tree = "eza --tree";
+
+    dsize = "dust";
+    dsorted = "dust -r";
+
+    ssh = "kitten ssh";
+  };
 
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless = {

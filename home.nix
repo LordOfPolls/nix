@@ -44,6 +44,16 @@
     rounded_corners = true;
   };
 
+  programs.git = {
+    enable = true;
+    delta = {
+      enable = true;
+      options = {
+        navigate = true;
+      };
+    };
+  };
+
   programs.firefox = {
     enable = true;
     policies = {
