@@ -151,6 +151,10 @@
         style = "yellow";
       };
 
+      hostname = {
+        ssh_only = false;
+      };
+
       rust = {
         format = "via [$symbol$version]($style) ";
         style = "bold red";
@@ -161,7 +165,7 @@
         style = "bold yellow";
       };
 
-      format = "$os\$directory\$git_branch\$git_status\$cmd_duration$rust\$python\$memory_usage\$line_break\$character";
+      format = "$os\$hostname\$directory\$git_branch\$git_status\$cmd_duration$rust\$python\$memory_usage\$line_break\$character";
     };
   };
 
