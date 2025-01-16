@@ -104,6 +104,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     packages = with pkgs; [
       pkgs.jetbrains.pycharm-professional
@@ -115,6 +116,7 @@
       pkgs.gitkraken
     ];
   };
+
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
@@ -155,6 +157,12 @@
     neofetch
     ripgrep
   ];
+
+  virtualisation.docker.enable = true;
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
 
   environment.variables = {
     PATH = [
