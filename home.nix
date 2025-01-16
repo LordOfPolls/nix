@@ -153,7 +153,6 @@
 
       hostname = {
         ssh_only = false;
-        format = "[$hostname]($style)|";
       };
 
       rust = {
@@ -166,7 +165,7 @@
         style = "bold yellow";
       };
 
-      format = "$os\$hostname\$directory\$git_branch\$git_status\$cmd_duration$rust\$python\$memory_usage\$line_break\$character";
+      format = "$sudo$os$username$hostname$directory$git_branch$git_status$cmd_duration$rust$python$memory_usage$line_break$character";
     };
   };
 
