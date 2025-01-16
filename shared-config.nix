@@ -69,6 +69,8 @@
     pkgs.gnome-console
   ];
   services.xserver.excludePackages = [pkgs.xterm];
+  services.gnome.core-utilities.enable = false;
+  services.gnome.gnome-browser-connector.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
   #services.displayManager.sddm.enable = true;
@@ -117,6 +119,13 @@
       pkgs.porsmo
       pkgs.gitui
       pkgs.speedtest-rs
+      gnomeExtensions.dash-to-dock
+      gnomeExtensions.appindicator # Adds system tray icons support
+      gnomeExtensions.caffeine # Prevents auto suspend
+      gnomeExtensions.vitals # System monitoring in top bar
+      gnomeExtensions.clipboard-indicator # Clipboard manager
+      gnomeExtensions.quick-settings-tweaker # Customize quick settings
+      gnomeExtensions.space-bar # Workspace indicator in panel
     ];
   };
   programs.zsh.enable = true;

@@ -35,8 +35,82 @@
   };
 
   dconf.settings = {
+    "org/gnome/shell" = {
+      enabled-extensions = [
+        "dash-to-dock@micxgx.gmail.com"
+        "appindicatorsupport@rgcjonas.gmail.com"
+        "caffeine@patapon.info"
+        "Vitals@CoreCoding.com"
+        "clipboard-indicator@tudmotu.com"
+        "quick-settings-tweaks@qwreey"
+        "space-bar@luchrioh"
+      ];
+    };
+
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
+    };
+
+    "org/gnome/shell/extensions/dash-to-dock" = {
+      dock-position = "BOTTOM";
+      extend-height = false;
+      dock-fixed = false;
+      autohide = true;
+      intellihide = true;
+      animation-time = 0.2;
+      transparency-mode = "DYNAMIC";
+      background-opacity = 0.8;
+      show-apps-at-top = false;
+      show-trash = false;
+    };
+
+    "org/gnome/shell/extensions/vitals" = {
+      show-storage = true;
+      show-temperature = true;
+      show-voltage = false;
+      show-memory = true;
+      show-processor = true;
+      show-network = true;
+      position-in-panel = "right";
+      hide-zeros = true;
+      fixed-widths = true;
+      update-time = 5;
+    };
+
+    "org/gnome/shell/extensions/caffeine" = {
+      show-indicator = true;
+      show-notifications = true;
+      restore-state = true;
+      enable-fullscreen = true;
+      toggle-state = false;
+    };
+
+    "org/gnome/shell/extensions/clipboard-indicator" = {
+      history-size = 10;
+      preview-size = 60;
+      strip-text = true;
+      clear-on-logout = true;
+      enable-keybindings = true;
+      clear-history = ["<Super>c"];
+      toggle-menu = ["<Super>v"];
+    };
+
+    "org/gnome/shell/extensions/quick-settings-tweaks" = {
+      output-show-selected-only = true;
+      volume-mixer-enabled = true;
+      volume-mixer-position = "bottom";
+      media-control-enabled = true;
+      media-control-compact-mode = true;
+      notifications-enabled = true;
+      notifications-position = "bottom";
+    };
+
+    "org/gnome/shell/extensions/space-bar" = {
+      position = "left";
+      indicator-style = "workspaces-bar";
+      show-empty-workspaces = true;
+      workspaces-bar-mode = "name";
+      workspace-margin = 4;
     };
   };
 
