@@ -189,7 +189,7 @@
 
   programs.kitty = {
     enable = true;
-    theme = "Tokyo Night";
+    theme = "Atom";
     font = {
       name = "JetBrainsMono Nerd Font";
       size = 10;
