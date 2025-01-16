@@ -146,7 +146,7 @@
       };
 
       cmd_duration = {
-        min_time = 2000;
+        min_time = 10000;
         format = "[$duration]($style) ";
         style = "yellow";
       };
