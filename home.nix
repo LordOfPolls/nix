@@ -21,6 +21,8 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    pkgs.zoxide
+    pkgs.fd
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -38,6 +40,93 @@
     };
   };
 
+  programs.starship = {
+    enable = true;
+    settings = {
+      add_newline = false;
+      os = {
+        disabled = false;
+        format = "[$symbol]($style) ";
+        style = "bold white";
+      };
+
+      character = {
+        success_symbol = "[➜](bold green)";
+        error_symbol = "[➜](bold red)";
+        vimcmd_symbol = "[](bold green)";
+      };
+
+      directory = {
+        truncation_length = 3;
+        truncate_to_repo = true;
+        style = "bold cyan";
+      };
+
+      git_branch = {
+        format = "[$symbol$branch]($style) ";
+        style = "bold purple";
+      };
+      git_status = {
+        format = "([$all_status$ahead_behind]($style) )";
+        style = "bold red";
+      };
+
+      cmd_duration = {
+        min_time = 2000;
+        format = "[$duration]($style) ";
+        style = "yellow";
+      };
+
+      format = "$os\$directory\$git_branch\$git_status\$cmd_duration\$memory_usage\$line_break\$character";
+    };
+  };
+
+  programs.zsh = {
+    enable = true;
+    enableAutosuggestions = true;
+    enableCompletion = true;
+    syntaxHighlighting.enable = true;
+    initExtra = ''
+      HISTSIZE=10000
+      SAVEHIST=10000
+
+      eval "$(zoxide init zsh)"
+    '';
+    shellAliases = {
+      cat = "bat";
+
+      ls = "eza";
+      ll = "eza -l";
+      la = "eza -la";
+      lt = "eza --tree";
+      l = "eza -l";
+      tree = "eza --tree";
+
+      dsize = "dust";
+      dsorted = "dust -r";
+      du = "dust";
+
+      ssh = "kitten ssh";
+
+      cd = "z";
+      find = "fd";
+    };
+  };
+
+  programs.kitty = {
+    enable = true;
+    theme = "Tokyo Night";
+    font = {
+      name = "JetBrainsMono Nerd Font";
+      size = 10;
+    };
+    settings = {
+      scrollback_lines = 10000;
+      enable_audio_bell = false;
+      window_padding_width = 4;
+    };
+  };
+
   programs.btop.settings = {
     color_theme = "./tokyo-night.theme";
     theme_background = true;
@@ -46,10 +135,15 @@
 
   programs.git = {
     enable = true;
+    userName = "LordOfPolls";
+    userEmail = "dev@lordofpolls.com";
     delta = {
       enable = true;
       options = {
         navigate = true;
+        light = false;
+        side-by-side = true;
+        line-numbers = true;
       };
     };
   };
@@ -76,9 +170,13 @@
         ublock-origin
         sponsorblock
         darkreader
-        tridactyl
         youtube-shorts-block
       ];
+      settings = {
+        "browser.toolbars.bookmarks.visibility" = "always";
+        "media.ffmpeg.vaapi.enabled" = true;
+        "media.hardware-video-decoding.enabled" = true;
+      };
     };
   };
 
