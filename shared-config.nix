@@ -176,6 +176,10 @@
     pkgs.coreutils-full
     btop
     htop
+    sysdig
+    iotop
+    nvtop
+    wavemon
     neofetch
     ripgrep
   ];
