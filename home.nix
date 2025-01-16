@@ -151,7 +151,17 @@
         style = "yellow";
       };
 
-      format = "$os\$directory\$git_branch\$git_status\$cmd_duration\$memory_usage\$line_break\$character";
+      rust = {
+        format = "via [$symbol$version]($style) ";
+        style = "bold red";
+      };
+
+      python = {
+        format = "via [$symbol$version]($style) ";
+        style = "bold yellow";
+      };
+
+      format = "$os\$directory\$git_branch\$git_status\$cmd_duration$rust\$python\$memory_usage\$line_break\$character";
     };
   };
 
