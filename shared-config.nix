@@ -145,6 +145,7 @@
     pkgs.vscode
     alejandra
     pkgs.gnome-tweaks
+    libnotify
 
     gnumake
     gcc
