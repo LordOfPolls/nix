@@ -161,7 +161,7 @@
 
       sudo = {
         symbol = "👑";
-        style = "bold red";
+        format = "[$symbol]($style)";
         disabled = false;
       };
 
@@ -175,7 +175,7 @@
         style = "bold yellow";
       };
 
-      format = "$sudo$os$username$hostname$directory$git_branch$git_status$cmd_duration$rust$python$memory_usage$line_break$character";
+      format = "$os$sudo$username$hostname$directory$git_branch$git_status$cmd_duration$rust$python$memory_usage$line_break$character";
     };
   };
 
