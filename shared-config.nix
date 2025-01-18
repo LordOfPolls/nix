@@ -186,6 +186,19 @@
     wavemon
     neofetch
     ripgrep
+
+    (python3.withPackages (ps:
+      with ps; [
+        pip
+        virtualenv
+        numpy
+        pandas
+        requests
+        pytest
+        black
+        flake8
+        mypy
+      ]))
   ];
 
   virtualisation.docker.enable = true;
@@ -198,6 +211,7 @@
     PATH = [
       "$HOME/.cargo/bin"
     ];
+    PYTHONPATH = "${pkgs.python3}/lib/python3.11/site-packages";
   };
 
   fonts.packages = with pkgs; [
