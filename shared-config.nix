@@ -165,9 +165,13 @@
     gnumake
     gcc
     cmake
+    binutils
     pkg-config
     pkgs.irust
     pkgs.bacon
+    openssl.dev
+    libffi.dev
+    zlib.dev
 
     pkgs.delta
     pkgs.bat
