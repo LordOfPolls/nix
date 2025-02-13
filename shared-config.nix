@@ -119,6 +119,7 @@
       pkgs.porsmo
       pkgs.gitui
       pkgs.speedtest-rs
+      pkgs.protontricks
       gnomeExtensions.dash-to-dock
       gnomeExtensions.appindicator
       gnomeExtensions.caffeine
