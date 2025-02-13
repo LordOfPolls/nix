@@ -120,6 +120,7 @@
       pkgs.gitui
       pkgs.speedtest-rs
       pkgs.protontricks
+      pkgs.bottles
       gnomeExtensions.dash-to-dock
       gnomeExtensions.appindicator
       gnomeExtensions.caffeine
