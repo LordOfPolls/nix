@@ -20,4 +20,8 @@
       options bluetooth disable_ertm=Y
     '';
   };
+
+  environment.systemPackages = [
+    pkgs.orca-slicer
+  ];
 }
